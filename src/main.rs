@@ -1,7 +1,11 @@
 fn main() {
-    let mut x: i32 = 5;
+    let  x = 5;
     println!("the value of x is : {x}");
-    x= 4;
+    {
+        let x = x + 30;
+        println!("the value of x is {x}");
+    }
+    let  x = x-3;
     println!("the value of x is : {x}")
     
 }
