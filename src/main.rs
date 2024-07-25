@@ -1,9 +1,11 @@
-fn main() {
-    let a: i32 = another_function(1);
-    println!("{}",a);
-}
+fn main() { 
+    let mut s: String = String::from("hello");
 
-fn another_function(x:i32) ->i32 {
-    println!("{} Another Function!",x);
-    return  x + 10; //세미 콜론 없이 반환할 값을 명시 할 수 있다
-}   
+    let r1: &String = &s; // 문제없음
+    let r2: &String = &s; // 문제없음
+    println!("{} and {}", r1, r2);
+    // 이 지점 이후로 변수 r1과 r2는 사용되지 않습니다
+
+    let r3: &mut String = &mut s; // 문제없음
+    println!("{}", r3);
+}
