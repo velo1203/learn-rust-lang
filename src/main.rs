@@ -1,11 +1,12 @@
-fn main() { 
-    let mut s: String = String::from("hello");
+fn main(){
+    let number = Some(30);
+    let number_plus = plus_one(number);
+    
+}
 
-    let r1: &String = &s; // 문제없음
-    let r2: &String = &s; // 문제없음
-    println!("{} and {}", r1, r2);
-    // 이 지점 이후로 변수 r1과 r2는 사용되지 않습니다
-
-    let r3: &mut String = &mut s; // 문제없음
-    println!("{}", r3);
+fn plus_one(number:Option<i32>) -> Option<i32>{
+    match number {
+        Some(i) => Some(i+1),
+        None => None
+    }
 }
